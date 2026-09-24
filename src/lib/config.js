@@ -75,4 +75,4 @@ export const BOOKING_STATUS = {
   noShow: 'No-show',
 }
 
-export const PROSPECT_SITUATION_POTENTIAL = 'Potential'
+export const PROSPECT_SITUATION_LEAD = 'Lead'

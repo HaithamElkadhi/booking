@@ -4,7 +4,7 @@ import {
   TABLES,
   FIELDS,
   BOOKING_STATUS,
-  PROSPECT_SITUATION_POTENTIAL,
+  PROSPECT_SITUATION_LEAD,
 } from './config'
 import { listAllRecords, createRecord, escapeFormulaString } from './airtableClient'
 
@@ -68,7 +68,7 @@ export async function createProspect({ studentName, email, phone }) {
     [f.surname]: surname,
     [f.email]: email,
     [f.phone]: phone,
-    [f.situation]: [PROSPECT_SITUATION_POTENTIAL],
+    [f.situation]: [PROSPECT_SITUATION_LEAD],
   })
 }
 

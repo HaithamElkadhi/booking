@@ -85,7 +85,7 @@ Relevant fields for this app:
 | Name | `fldrjpZMHxXReuVBK` | singleLineText |
 | Surname | `fldrlBOVl9Rd2wIff` | singleLineText |
 | Phone | `fldx6RMeRYPWC9BV3` | singleLineText |
-| Prospect Situation | `fldLY8mOVCDsJhw23` | multipleSelects | set to `"Potential"` when auto-creating |
+| Prospect Situation | `fldLY8mOVCDsJhw23` | multipleSelects | set to `"Lead"` when auto-creating |
 
 **Table: Booking — `tblYHIcXwoMupWnaC`**
 
@@ -134,7 +134,7 @@ Relevant fields for this app:
 3. **Prospect matching:** search Prospects table by Email (exact match, case-insensitive).
    - Match found → use that record's ID for `Linked Prospect`.
    - No match → create a new Prospect record first with Name, Surname (best-effort split
-     from Student Name), Email, Phone, `Prospect Situation` = `"Potential"`. Use the new
+     from Student Name), Email, Phone, `Prospect Situation` = `"Lead"`. Use the new
      record's ID for `Linked Prospect`.
 4. Create the Booking record with all fields above, `Booking Status` = `Scheduled`.
 5. Show a confirmation screen: date/time, meeting type, and a note that a confirmation
