@@ -5,10 +5,11 @@ import { formatDayLabel, dualTimeLabel } from '../lib/time'
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export default function BookingForm({ day, slot, localZone, onBack, onSubmit, submitting, submitError }) {
-  const [studentName, setStudentName] = useState('')
-  const [email, setEmail] = useState('')
-  const [phone, setPhone] = useState('')
-  const [meetingType, setMeetingType] = useState(MEETING_TYPES[0])
+  const [prefill] = useState(() => new URLSearchParams(window.location.hash.slice(1)))
+  const [studentName, setStudentName] = useState(() => prefill.get('studentName') || '')
+  const [email, setEmail] = useState(() => prefill.get('email') || '')
+  const [phone, setPhone] = useState(() => prefill.get('phone') || '')
+  const [meetingType, setMeetingType] = useState(() => MEETING_TYPES.includes(prefill.get('meetingType')) ? prefill.get('meetingType') : MEETING_TYPES[0])
   const [notes, setNotes] = useState('')
   const [touched, setTouched] = useState(false)
 
